@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:wght@400;700&display=swap');
+
+:root {
+  --rosa-chiclete: #e96075; 
+  --branco: #ffffff;
+}
+
+/* RESET E TELA CHEIA */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--rosa-chiclete) !important;
+  overflow: hidden; /* Volta a travar o scroll na tela principal */
+}
+
+/* Criamos uma exceção: se estivermos vendo os produtos, liberamos o scroll */
+.modo-vitrine {
+  overflow-y: auto !important;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--branco);
+}
+
+.container-geral {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--rosa-chiclete);
+  justify-content: space-between;
+  position: relative;
+}
+
+/* SAKURAS POSICIONADAS NOS CANTOS */
+.sakura-topo, .sakura-baixo {
+  position: absolute;
+  width: 350px;
+  z-index: 0;
+  pointer-events: none;
+}
+.sakura-topo { top: -20px; right: -20px; opacity: 0.8; }
+.sakura-baixo { bottom: -20px; left: -20px; opacity: 0.6; transform: rotate(180deg); }
+
+/* HEADER E LINHA */
+.nav-container {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.linha-header {
+  position: absolute;
+  left: 10%; right: 10%; height: 1px;
+  background-color: rgba(255, 255, 255, 0.4);
+  top: 50%; transform: translateY(-50%);
+  z-index: 1;
+}
+
+.nav-links-central {
+  display: flex;
+  gap: 40px;
+  position: relative;
+  z-index: 5;
+}
+
+.nav-links-central a {
+  text-decoration: none;
+  color: var(--branco);
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  padding: 0 15px;
+  background-color: var(--rosa-chiclete);
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.nav-links-central a:hover { transform: scale(1.1); }
+
+/* CONTEÚDO PRINCIPAL - VOLTOU A SER 100% CENTRALIZADO */
+.conteudo-principal {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 2;
+}
+
+.bloco-central, .bloco-texto-sobre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+}
+
+.logo-banner-gigante {
+  width: 80%;
+  max-width: 420px; 
+}
+
+/* TEXTOS EM BRANCO E CURSIVO */
+.titulo-sobre, .texto-sobre-cursivo, .assinatura, .slogan-texto {
+  font-family: 'Dancing Script', cursive;
+  color: var(--branco);
+  margin: 0;
+}
+
+.titulo-sobre { font-size: 3.2rem; }
+.texto-sobre-cursivo { font-size: 1.7rem; max-width: 700px; line-height: 1.3; }
+.assinatura { font-size: 1.6rem; margin-top: 10px; }
+.slogan-texto { font-size: 1.8rem; max-width: 700px; }
+
+/* BOTÕES ESTILO PÍLULA */
+.botao-explorar, .link-contato-social {
+  background-color: var(--branco);
+  color: var(--rosa-chiclete);
+  border: none;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.botao-explorar { padding: 8px 40px; font-size: 1.6rem; margin-top: 10px; }
+.container-botoes-contato { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
+.link-contato-social { padding: 10px 30px; font-size: 1.8rem; }
+
+/* EXPLORAR E CÍRCULOS */
+.container-explorar { display: flex; justify-content: center; align-items: center; width: 100%; }
+.grid-secoes { display: flex; gap: 40px; flex-wrap: wrap; justify-content: center; }
+.secao-item { display: flex; flex-direction: column; align-items: center; gap: 15px; cursor: pointer; transition: 0.3s ease; }
+.secao-item:hover { transform: scale(1.2); }
+.circulo-icone { width: 110px; height: 110px; background-color: var(--branco); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 3.5rem; }
+.secao-item span { font-family: 'Dancing Script', cursive; font-size: 1.8rem; color: var(--branco); }
+
+/* RODAPÉ */
+.footer-copyright { width: 100%; padding: 15px 0; text-align: center; z-index: 10; }
+.footer-copyright p { margin: 0; font-size: 0.8rem; opacity: 0.8; color: var(--branco); }
+
+/* --- VITRINE (SÓ APARECE QUANDO PRECISA) --- */
+.area-produtos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 50px; /* Espaço pro footer não cobrir o último produto */
+}
+
+.vitrine-vendas {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card-venda {
+  background: var(--branco);
+  border-radius: 20px;
+  padding: 15px;
+  width: 170px;
+  text-align: center;
+}
+
+.foto-prod {
+  width: 100%;
+  height: 150px;
+  background: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.imagem-real { width: 100%; height: 100%; object-fit: cover; }
+
+.card-venda h3 { font-family: 'Montserrat', sans-serif; color: var(--rosa-chiclete); font-size: 0.85rem; height: 35px; margin: 5px 0; display: flex; align-items: center; justify-content: center; }
+.card-venda p { color: #333; font-weight: bold; margin-bottom: 10px; font-size: 1.1rem; }
+.card-venda button { background: var(--rosa-chiclete); color: white; border: none; padding: 8px; border-radius: 20px; cursor: pointer; font-size: 0.7rem; width: 100%; font-weight: bold; }
+
+.botao-voltar-secao { margin-top: 30px; background: none; border: 1px solid white; color: white; padding: 8px 25px; border-radius: 30px; cursor: pointer; }
