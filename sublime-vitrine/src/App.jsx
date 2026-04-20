@@ -72,7 +72,7 @@ function App() {
         {abaAtiva === 'explorar' && (
           <div className="container-explorar" style={{ width: '100%' }}>
             
-            {/* GRID DE CATEGORIAS */}
+            {/* GRID DE CATEGORIAS - SÓ APARECE SE NADA FOR CLICADO */}
             {!secaoInterna && (
               <div className="grid-secoes">
                 <div className="secao-item" onClick={() => setSecaoInterna('buques')}>
