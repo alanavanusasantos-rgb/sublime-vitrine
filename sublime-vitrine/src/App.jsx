@@ -4,6 +4,7 @@ import logo from './assets/logo.png';
 import sakura from './assets/sakura.png';
 
 // --- IMPORTAÇÕES DAS IMAGENS ---
+import buque15 from './assets/buque15.jpeg';
 import buque14 from './assets/buque14.jpeg';
 import buque12 from './assets/buque12.jpeg';
 import buque11 from './assets/buque11.jpeg';
@@ -24,6 +25,17 @@ import cesta4 from './assets/cesta4.jpeg';
 import cesta5 from './assets/cesta5.jpeg';
 import cesta6 from './assets/cesta6.jpeg';
 import cesta7 from './assets/cesta7.jpeg';
+import cesta8 from './assets/cesta8.jpeg';
+import cesta9 from './assets/cesta9.jpeg';
+import cesta10 from './assets/cesta10.jpeg';
+import cesta11 from './assets/cesta11.jpeg';
+import cesta12 from './assets/cesta12.jpeg';
+import cesta13 from './assets/cesta13.jpeg';
+import cesta14 from './assets/cesta14.jpeg';
+import cesta15 from './assets/cesta15.jpeg';
+import cesta16 from './assets/cesta16.jpeg';
+import cesta17 from './assets/cesta17.jpeg';
+import cesta18 from './assets/cesta18.jpeg';
 
 import cuia1 from './assets/cuia1.jpeg';
 import cuia2 from './assets/cuia2.jpeg';
@@ -46,7 +58,12 @@ function App() {
   };
 
   return (
-    <div className={`container-geral ${secaoInterna ? 'modo-vitrine' : ''}`}>
+    <div className={`container-geral ${secaoInterna || abaAtiva !== 'inicio' ? 'modo-vitrine' : ''}`}>
+      
+      {abaAtiva !== 'inicio' && (
+        <button className="botao-voltar-fixo" onClick={() => { setSecaoInterna(null); setAbaAtiva('inicio'); }}>←</button>
+      )}
+
       <img src={sakura} alt="" className="sakura-topo" />
       <img src={sakura} alt="" className="sakura-baixo" />
       
@@ -63,16 +80,15 @@ function App() {
         
         {abaAtiva === 'inicio' && (
           <div className="bloco-central">
+            {/* Voltamos para a logo original e o tamanho padrão definido no seu CSS */}
             <img src={logo} alt="Logo Sublime" className="logo-banner-gigante" />
-            <p className="slogan-texto">✨Presentear é um ato de amor💐</p>
+            <p className="slogan-texto">✨Feliz dia das Mães💐</p>
             <button className="botao-explorar" onClick={() => setAbaAtiva('explorar')}>Explorar Coleção</button>
           </div>
         )}
 
         {abaAtiva === 'explorar' && (
           <div className="container-explorar" style={{ width: '100%' }}>
-            
-            {/* GRID DE CATEGORIAS - SÓ APARECE SE NADA FOR CLICADO */}
             {!secaoInterna && (
               <div className="grid-secoes">
                 <div className="secao-item" onClick={() => setSecaoInterna('buques')}>
@@ -94,12 +110,12 @@ function App() {
               </div>
             )}
 
-            {/* VITRINE DE BUQUÊS */}
             {secaoInterna === 'buques' && (
               <div className="area-produtos">
                 <h2 className="titulo-sobre">Nossos Buquês</h2>
                 <div className="vitrine-vendas">
                   {[
+                    { img: buque15, nome: "Rosa no Cone Dia das Mães (consultar cor)", preco: "30,00" },
                     { img: buque14, nome: "Buquê coreano 5 rosas", preco: "160,00" },
                     { img: buque12, nome: "Solitário girassol Van Gogh", preco: "50,00" },
                     { img: buque11, nome: "Cone Rosa", preco: "30,00" },
@@ -125,7 +141,6 @@ function App() {
               </div>
             )}
 
-            {/* VITRINE DE CESTAS */}
             {secaoInterna === 'cestas' && (
               <div className="area-produtos">
                 <h2 className="titulo-sobre">Cestas Especiais</h2>
@@ -137,7 +152,18 @@ function App() {
                     { img: cesta4, nome: "Cesta personalizável", preco: "Consulte aqui" },
                     { img: cesta5, nome: "Cesta personalizável", preco: "Consulte aqui" },
                     { img: cesta6, nome: "Cesta personalizável", preco: "Consulte aqui" },
-                    { img: cesta7, nome: "Cesta personalizável", preco: "Consulte aqui" }
+                    { img: cesta7, nome: "Cesta personalizável", preco: "Consulte aqui" },
+                    { img: cesta8, nome: "Cesta Pronta", preco: "R$ 205,00" },
+                    { img: cesta9, nome: "Cesta Pronta", preco: "R$ 200,00" },
+                    { img: cesta10, nome: "Cesta Pronta", preco: "R$ 335,00" },
+                    { img: cesta11, nome: "Cesta Pronta", preco: "R$ 219,00" },
+                    { img: cesta12, nome: "Cesta Mãe", preco: "R$ 212,00" },
+                    { img: cesta13, nome: "Box Cacau Show", preco: "R$ 230,00" },
+                    { img: cesta14, nome: "Cesta Pronta", preco: "R$ 190,00" },
+                    { img: cesta15, nome: "Cesta Pronta", preco: "R$ 100,00" },
+                    { img: cesta16, nome: "Cesta Pronta", preco: "R$ 150,00" },
+                    { img: cesta17, nome: "Cesta Pronta", preco: "R$ 215,00" },
+                    { img: cesta18, nome: "Cesta Pronta", preco: "R$ 160,00" }
                   ].map((p, index) => (
                     <div className="card-venda" key={index}>
                       <div className="foto-prod"><img src={p.img} alt={p.nome} className="imagem-real" /></div>
@@ -151,7 +177,6 @@ function App() {
               </div>
             )}
 
-            {/* VITRINE DE CHIMAS */}
             {secaoInterna === 'chimas' && (
               <div className="area-produtos">
                 <h2 className="titulo-sobre">Linha Chimas</h2>
@@ -175,7 +200,6 @@ function App() {
               </div>
             )}
 
-            {/* VITRINE DE PERSONALIZADOS */}
             {secaoInterna === 'personalizados' && (
               <div className="area-produtos">
                 <h2 className="titulo-sobre">Personalizados</h2>
@@ -203,7 +227,13 @@ function App() {
         {abaAtiva === 'sobre' && (
           <div className="bloco-texto-sobre">
             <h2 className="titulo-sobre">Nossa Essência</h2>
-            <p className="assinatura">Com amor, Equipe Sublime ✨</p>
+            <p className="slogan-texto">
+              Somos especialistas em presentes, por que entendemos que presentear vai muito além de comprar algo e entregar, se trata de demonstrar que aquela pessoa é especial e merece dedicação na escolha e produção de cada detalhe, estamos sempre em busca de inovação, mas sem perder a nossa essência que é a proximidade com nossos clientes, que se tornam nossos amigos.
+            </p>
+            <p className="slogan-texto">
+              Nascemos de um acaso, nosso trabalho é um amor construído, entregamos sorrisos e compartilhamos momentos, e entre laços e flores, entregamos em cada presente um pouquinho de nós, vamos construindo juntos essa história “Sublime”, que está só começando…
+            </p>
+            <h2 className="titulo-sobre">Com carinho, Equipe Sublime ✨</h2>
           </div>
         )}
 
