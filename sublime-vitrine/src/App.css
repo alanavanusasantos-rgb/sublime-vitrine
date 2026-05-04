@@ -223,3 +223,69 @@ body {
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
+/* Configuração da foto de fundo no banner inicial */
+.banner-com-foto {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/diadasmaes.jpeg'); /* Caminho da sua imagem */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.banner-com-foto {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-image será aplicado pelo style inline no JSX */
+  background-size: contain; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--rosa-chiclete); /* Cor de fundo para as bordas */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+/* Container que centraliza o card e o botão */
+.bloco-central {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  z-index: 5;
+  position: relative;
+}
+
+/* O Card com borda branca e sombra */
+.card-foto-dia-das-maes {
+  background: white;
+  padding: 12px; /* Espessura da moldura branca */
+  border-radius: 30px; /* Cantos arredondados como no print */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
+  max-width: 90%; /* Responsivo para celular */
+  line-height: 0;
+}
+
+.foto-destaque {
+  max-height: 60vh; /* Altura ideal para sobrar espaço para as Sakuras */
+  border-radius: 20px; /* Arredonda a foto também */
+  display: block;
+}
+
+/* Garante que as Sakuras fiquem nos cantos certinho */
+.sakura-topo, .sakura-baixo {
+  z-index: 2; /* Atrás do card, mas na frente do fundo rosa */
+}

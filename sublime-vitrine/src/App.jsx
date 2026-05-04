@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
-import logo from './assets/logo.png';
 import sakura from './assets/sakura.png';
+import diadasmaes from './assets/diadasmaes.jpeg';
 
 // --- IMPORTAÇÕES DAS IMAGENS ---
 import buque15 from './assets/buque15.jpeg';
@@ -17,6 +17,8 @@ import buque5 from './assets/buque5.jpeg';
 import buque6 from './assets/buque6.jpeg';
 import buque4 from './assets/buque4.jpeg';
 import buque3 from './assets/buque3.jpeg';
+import buque16 from './assets/buque16.jpeg';
+import buque17 from './assets/buque17.jpeg';
 
 import cesta1 from './assets/cesta1.jpeg';
 import cesta2 from './assets/cesta2.jpeg';
@@ -36,12 +38,15 @@ import cesta15 from './assets/cesta15.jpeg';
 import cesta16 from './assets/cesta16.jpeg';
 import cesta17 from './assets/cesta17.jpeg';
 import cesta18 from './assets/cesta18.jpeg';
+import cesta19 from './assets/cesta19.jpeg';
+import cesta20 from './assets/cesta20.jpeg';
 
 import cuia1 from './assets/cuia1.jpeg';
 import cuia2 from './assets/cuia2.jpeg';
 import cuia3 from './assets/cuia3.jpeg';
 import cuia4 from './assets/cuia4.jpeg';
 import mateira2 from './assets/mateira2.jpeg';
+import mateira4 from './assets/mateira4.jpeg';
 
 import caneca1 from './assets/caneca1.jpeg';
 import caneca2 from './assets/caneca2.jpeg';
@@ -78,14 +83,26 @@ function App() {
 
       <main className="conteudo-principal">
         
-        {abaAtiva === 'inicio' && (
-          <div className="bloco-central">
-            {/* Voltamos para a logo original e o tamanho padrão definido no seu CSS */}
-            <img src={logo} alt="Logo Sublime" className="logo-banner-gigante" />
-            <p className="slogan-texto">✨Feliz dia das Mães💐</p>
-            <button className="botao-explorar" onClick={() => setAbaAtiva('explorar')}>Explorar Coleção</button>
-          </div>
-        )}
+       {abaAtiva === 'inicio' && (
+  <div className="bloco-central">
+    {/* Container do Card da Foto */}
+    <div className="card-foto-dia-das-maes">
+      <img 
+        src={diadasmaes} 
+        alt="Especial Dia das Mães Sublime" 
+        className="foto-destaque"
+      />
+    </div>
+
+    {/* Botão posicionado logo abaixo */}
+    <button 
+      className="botao-explorar" 
+      onClick={() => setAbaAtiva('explorar')}
+    >
+      Explorar Coleção
+    </button>
+  </div>
+)}
 
         {abaAtiva === 'explorar' && (
           <div className="container-explorar" style={{ width: '100%' }}>
@@ -115,6 +132,8 @@ function App() {
                 <h2 className="titulo-sobre">Nossos Buquês</h2>
                 <div className="vitrine-vendas">
                   {[
+                    { img: buque17, nome: "Orquídea cascata pote 15", preco: "180,00" },
+                    { img: buque16, nome: "Bambu da Sorte (consultar cor)", preco: "50,00" },
                     { img: buque15, nome: "Rosa no Cone Dia das Mães (consultar cor)", preco: "30,00" },
                     { img: buque14, nome: "Buquê coreano 5 rosas", preco: "160,00" },
                     { img: buque12, nome: "Solitário girassol Van Gogh", preco: "50,00" },
@@ -163,7 +182,10 @@ function App() {
                     { img: cesta15, nome: "Cesta Pronta", preco: "R$ 100,00" },
                     { img: cesta16, nome: "Cesta Pronta", preco: "R$ 150,00" },
                     { img: cesta17, nome: "Cesta Pronta", preco: "R$ 215,00" },
-                    { img: cesta18, nome: "Cesta Pronta", preco: "R$ 160,00" }
+                    { img: cesta18, nome: "Cesta Pronta", preco: "R$ 160,00" },
+                    { img: cesta19, nome: "Cesta personalizada aniversário", preco: "Consulte aqui" },
+                    { img: cesta20, nome: "Box delicada, ideal para aniversário de 15 anos, infantil, amiga", preco: "Consulte aqui" }
+
                   ].map((p, index) => (
                     <div className="card-venda" key={index}>
                       <div className="foto-prod"><img src={p.img} alt={p.nome} className="imagem-real" /></div>
@@ -186,7 +208,8 @@ function App() {
                     { img: cuia2, nome: "Cuia gravada", preco: "R$ 100,00" },
                     { img: cuia3, nome: "Cuia glitter", preco: "R$ 90,00" },
                     { img: cuia4, nome: "Cuia gravada", preco: "R$ 100,00" },
-                    { img: mateira2, nome: "Mateira 3pçs", preco: "R$ 290,00" }
+                    { img: mateira2, nome: "Mateira 3pçs", preco: "R$ 290,00" },
+                    { img: mateira4, nome: "Kit mateira completo MATETRI ", preco: "R$ 420,00" }
                   ].map((p, index) => (
                     <div className="card-venda" key={index}>
                       <div className="foto-prod"><img src={p.img} alt={p.nome} className="imagem-real" /></div>
