@@ -53,6 +53,17 @@ import caneca2 from './assets/caneca2.jpeg';
 import caneca3 from './assets/caneca3.jpeg';
 import caneca4 from './assets/caneca4.jpeg';
 
+import maes1 from './assets/maes1.jpeg';
+import maes2 from './assets/maes2.jpeg';
+import maes3 from './assets/maes3.jpeg';
+import maes4 from './assets/maes4.jpeg';
+import maes5 from './assets/maes5.jpeg';
+import maes6 from './assets/maes6.jpeg';
+import maes7 from './assets/maes7.jpeg';
+import maes8 from './assets/maes8.jpeg';
+import maes9 from './assets/maes9.jpeg';
+import maes10 from './assets/maes10.jpeg';
+
 function App() {
   const [abaAtiva, setAbaAtiva] = useState('inicio');
   const [secaoInterna, setSecaoInterna] = useState(null);
@@ -83,26 +94,14 @@ function App() {
 
       <main className="conteudo-principal">
         
-       {abaAtiva === 'inicio' && (
-  <div className="bloco-central">
-    {/* Container do Card da Foto */}
-    <div className="card-foto-dia-das-maes">
-      <img 
-        src={diadasmaes} 
-        alt="Especial Dia das Mães Sublime" 
-        className="foto-destaque"
-      />
-    </div>
-
-    {/* Botão posicionado logo abaixo */}
-    <button 
-      className="botao-explorar" 
-      onClick={() => setAbaAtiva('explorar')}
-    >
-      Explorar Coleção
-    </button>
-  </div>
-)}
+        {abaAtiva === 'inicio' && (
+          <div className="bloco-central">
+            <div className="card-foto-dia-das-maes">
+              <img src={diadasmaes} alt="Especial Dia das Mães" className="foto-destaque" />
+            </div>
+            <button className="botao-explorar" onClick={() => setAbaAtiva('explorar')}>Explorar Coleção</button>
+          </div>
+        )}
 
         {abaAtiva === 'explorar' && (
           <div className="container-explorar" style={{ width: '100%' }}>
@@ -123,6 +122,10 @@ function App() {
                 <div className="secao-item" onClick={() => setSecaoInterna('chimas')}>
                   <div className="circulo-icone">🧉</div>
                   <span>Chimas</span>
+                </div>
+                <div className="secao-item" onClick={() => setSecaoInterna('diadasmaes')}>
+                  <div className="circulo-icone">💖</div>
+                  <span>Dia das Mães</span>
                 </div>
               </div>
             )}
@@ -184,8 +187,7 @@ function App() {
                     { img: cesta17, nome: "Cesta Pronta", preco: "R$ 215,00" },
                     { img: cesta18, nome: "Cesta Pronta", preco: "R$ 160,00" },
                     { img: cesta19, nome: "Cesta personalizada aniversário", preco: "Consulte aqui" },
-                    { img: cesta20, nome: "Box delicada, ideal para aniversário de 15 anos, infantil, amiga", preco: "Consulte aqui" }
-
+                    { img: cesta20, nome: "Box aniversário de 15 anos", preco: "Consulte aqui" }
                   ].map((p, index) => (
                     <div className="card-venda" key={index}>
                       <div className="foto-prod"><img src={p.img} alt={p.nome} className="imagem-real" /></div>
@@ -209,7 +211,7 @@ function App() {
                     { img: cuia3, nome: "Cuia glitter", preco: "R$ 90,00" },
                     { img: cuia4, nome: "Cuia gravada", preco: "R$ 100,00" },
                     { img: mateira2, nome: "Mateira 3pçs", preco: "R$ 290,00" },
-                    { img: mateira4, nome: "Kit mateira completo MATETRI ", preco: "R$ 420,00" }
+                    { img: mateira4, nome: "Kit mateira completo", preco: "R$ 420,00" }
                   ].map((p, index) => (
                     <div className="card-venda" key={index}>
                       <div className="foto-prod"><img src={p.img} alt={p.nome} className="imagem-real" /></div>
@@ -244,17 +246,45 @@ function App() {
                 <button className="botao-voltar-secao" onClick={() => setSecaoInterna(null)}>← Voltar</button>
               </div>
             )}
+
+            {secaoInterna === 'diadasmaes' && (
+              <div className="area-produtos">
+                <h2 className="titulo-sobre">Dia das Mães</h2>
+                <div className="vitrine-vendas">
+                  {[
+                    { img: maes1, nome: "Pronta entrega Especial", preco: "110,00" },
+                    { img: maes2, nome: "Perfume Árabe + Bolsa", preco: "490,00" },
+                    { img: maes3, nome: "Orquídea", preco: "160,00" },
+                    { img: maes4, nome: "Orquídea", preco: "160,00" },
+                    { img: maes5, nome: "Orquídea", preco: "160,00" },
+                    { img: maes6, nome: "Orquídea Maior", preco: "180,00" },
+                    { img: maes7, nome: "Orquídea Maior", preco: "180,00" },
+                    { img: maes8, nome: "Orquídea Maior", preco: "180,00" },
+                    { img: maes9, nome: "Orquídea Maior", preco: "180,00" },
+                    { img: maes10, nome: "Orquídea Maior", preco: "180,00" }
+                  ].map((p, index) => (
+                    <div className="card-venda" key={index}>
+                      <div className="foto-prod"><img src={p.img} alt={p.nome} className="imagem-real" /></div>
+                      <h3>{p.nome}</h3>
+                      <p>R$ {p.preco}</p>
+                      <button onClick={() => comprarWpp(p.nome)}>Pedir no WhatsApp</button>
+                    </div>
+                  ))}
+                </div>
+                <button className="botao-voltar-secao" onClick={() => setSecaoInterna(null)}>← Voltar</button>
+              </div>
+            )}
           </div>
         )}
-
+            
         {abaAtiva === 'sobre' && (
           <div className="bloco-texto-sobre">
             <h2 className="titulo-sobre">Nossa Essência</h2>
             <p className="slogan-texto">
-              Somos especialistas em presentes, por que entendemos que presentear vai muito além de comprar algo e entregar, se trata de demonstrar que aquela pessoa é especial e merece dedicação na escolha e produção de cada detalhe, estamos sempre em busca de inovação, mas sem perder a nossa essência que é a proximidade com nossos clientes, que se tornam nossos amigos.
+              Somos especialistas em presentes, por que entendemos que presentear vai muito além de comprar algo e entregar...
             </p>
             <p className="slogan-texto">
-              Nascemos de um acaso, nosso trabalho é um amor construído, entregamos sorrisos e compartilhamos momentos, e entre laços e flores, entregamos em cada presente um pouquinho de nós, vamos construindo juntos essa história “Sublime”, que está só começando…
+              Nascemos de um acaso, nosso trabalho é um amor construído...
             </p>
             <h2 className="titulo-sobre">Com carinho, Equipe Sublime ✨</h2>
           </div>
