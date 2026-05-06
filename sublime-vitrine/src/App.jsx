@@ -73,6 +73,7 @@ import maes17 from './assets/maes17.jpeg';
 import maes18 from './assets/maes18.jpeg';
 import maes19 from './assets/maes19.jpeg';
 import maes20 from './assets/maes20.jpeg';
+import maes21 from './assets/maes21.jpeg';
 
 function App() {
   const [abaAtiva, setAbaAtiva] = useState('inicio');
@@ -282,6 +283,7 @@ function App() {
                     { img: maes18, nome: "Box Flowers", preco: "198,00" },
                     { img: maes19, nome: "Box com pulseira duplo banho a ouro hipoalergênica/Espada de São Jorge coração", preco: "250,00" },
                     { img: maes20, nome: "Espada de São Jorge em formato de coração", preco: "40,00" },
+                    { img: maes21, nome: "Orquídea pote 12", preco: "140,00" }
                   ].map((p, index) => (
                     <div className="card-venda" key={index}>
                       <div className="foto-prod"><img src={p.img} alt={p.nome} className="imagem-real" /></div>
