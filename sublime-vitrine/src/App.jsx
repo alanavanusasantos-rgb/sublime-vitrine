@@ -63,6 +63,16 @@ import maes7 from './assets/maes7.jpeg';
 import maes8 from './assets/maes8.jpeg';
 import maes9 from './assets/maes9.jpeg';
 import maes10 from './assets/maes10.jpeg';
+import maes11 from './assets/maes11.jpeg';
+import maes12 from './assets/maes12.jpeg';
+import maes13 from './assets/maes13.jpeg';
+import maes14 from './assets/maes14.jpeg';
+import maes15 from './assets/maes15.jpeg';
+import maes16 from './assets/maes16.jpeg';
+import maes17 from './assets/maes17.jpeg';
+import maes18 from './assets/maes18.jpeg';
+import maes19 from './assets/maes19.jpeg';
+import maes20 from './assets/maes20.jpeg';
 
 function App() {
   const [abaAtiva, setAbaAtiva] = useState('inicio');
@@ -261,7 +271,17 @@ function App() {
                     { img: maes7, nome: "Orquídea Maior", preco: "180,00" },
                     { img: maes8, nome: "Orquídea Maior", preco: "180,00" },
                     { img: maes9, nome: "Orquídea Maior", preco: "180,00" },
-                    { img: maes10, nome: "Orquídea Maior", preco: "180,00" }
+                    { img: maes10, nome: "Orquídea Maior", preco: "180,00" },
+                    { img: maes11, nome: "Cesta Orquídea", preco: "180,00" },
+                    { img: maes12, nome: "Cesta Palha", preco: "190,00" },
+                    { img: maes13, nome: "Box Bambu", preco: "230,00" },
+                    { img: maes14, nome: "Box Green", preco: "245,00" },
+                    { img: maes15, nome: "Box Pink", preco: "180,00" },
+                    { img: maes16, nome: "Bambu", preco: "60,00" },
+                    { img: maes17, nome: "Box Flowers", preco: "198,00" },
+                    { img: maes18, nome: "Box Flowers", preco: "198,00" },
+                    { img: maes19, nome: "Box com pulseira duplo banho a ouro hipoalergênica/Espada de São Jorge coração", preco: "250,00" },
+                    { img: maes20, nome: "Espada de São Jorge em formato de coração", preco: "40,00" },
                   ].map((p, index) => (
                     <div className="card-venda" key={index}>
                       <div className="foto-prod"><img src={p.img} alt={p.nome} className="imagem-real" /></div>
