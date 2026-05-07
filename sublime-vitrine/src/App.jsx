@@ -4,6 +4,8 @@ import sakura from './assets/sakura.png';
 import diadasmaes from './assets/diadasmaes.jpeg';
 
 // --- IMPORTAÇÕES DAS IMAGENS ---
+import aviso from './assets/aviso.jpeg';
+{/*
 import buque15 from './assets/buque15.jpeg';
 import buque14 from './assets/buque14.jpeg';
 import buque12 from './assets/buque12.jpeg';
@@ -18,7 +20,7 @@ import buque6 from './assets/buque6.jpeg';
 import buque4 from './assets/buque4.jpeg';
 import buque3 from './assets/buque3.jpeg';
 import buque16 from './assets/buque16.jpeg';
-import buque17 from './assets/buque17.jpeg';
+import buque17 from './assets/buque17.jpeg';*/}
 
 import cesta1 from './assets/cesta1.jpeg';
 import cesta2 from './assets/cesta2.jpeg';
@@ -74,6 +76,12 @@ import maes18 from './assets/maes18.jpeg';
 import maes19 from './assets/maes19.jpeg';
 import maes20 from './assets/maes20.jpeg';
 import maes21 from './assets/maes21.jpeg';
+import maes22 from './assets/maes22.jpeg';
+import maes23 from './assets/maes23.jpeg';
+import maes24 from './assets/maes24.jpeg';
+import maes25 from './assets/maes25.jpeg';
+import maes26 from './assets/maes26.jpeg';
+import maes27 from './assets/maes27.jpeg';
 
 function App() {
   const [abaAtiva, setAbaAtiva] = useState('inicio');
@@ -142,37 +150,43 @@ function App() {
             )}
 
             {secaoInterna === 'buques' && (
-              <div className="area-produtos">
-                <h2 className="titulo-sobre">Nossos Buquês</h2>
-                <div className="vitrine-vendas">
-                  {[
-                    { img: buque17, nome: "Orquídea cascata pote 15", preco: "180,00" },
-                    { img: buque16, nome: "Bambu da Sorte (consultar cor)", preco: "50,00" },
-                    { img: buque15, nome: "Rosa no Cone Dia das Mães (consultar cor)", preco: "30,00" },
-                    { img: buque14, nome: "Buquê coreano 5 rosas", preco: "160,00" },
-                    { img: buque12, nome: "Solitário girassol Van Gogh", preco: "50,00" },
-                    { img: buque11, nome: "Cone Rosa", preco: "30,00" },
-                    { img: buque13, nome: "Buquê 3 rosas", preco: "90,00" },
-                    { img: buque10, nome: "Buquê rosas mistas", preco: "190,00" },
-                    { img: buque8, nome: "Buquê 15 rosas vermelhas", preco: "375,00" },
-                    { img: buque9, nome: "Box rosas e astromélias", preco: "199,00" },
-                    { img: buque7, nome: "Cartão Coração", preco: "59,90" },
-                    { img: buque5, nome: "Buquê 10 rosas", preco: "270,00" },
-                    { img: buque6, nome: "Buquê 7 rosas mistas G", preco: "230,00" },
-                    { img: buque4, nome: "Buquê 3 rosas Pink", preco: "90,00" },
-                    { img: buque3, nome: "Solitário girassol e rosa azul", preco: "80,00" }
-                  ].map((p, index) => (
-                    <div className="card-venda" key={index}>
-                      <div className="foto-prod"><img src={p.img} alt={p.nome} className="imagem-real" /></div>
-                      <h3>{p.nome}</h3>
-                      <p>R$ {p.preco}</p>
-                      <button onClick={() => comprarWpp(p.nome)}>Pedir no WhatsApp</button>
-                    </div>
-                  ))}
-                </div>
-                <button className="botao-voltar-secao" onClick={() => setSecaoInterna(null)}>← Voltar</button>
-              </div>
-            )}
+  <div className="area-produtos">
+    <h2 className="titulo-sobre">Nossos Buquês</h2>
+    <div className="vitrine-vendas">
+      {[
+        { img: aviso, nome: "Buquês personalizados (consultar opções)", preco: "Consulte aqui" }
+        /* { img: buque17, nome: "Orquídea cascata pote 15", preco: "180,00" },
+        { img: buque16, nome: "Bambu da Sorte (consultar cor)", preco: "50,00" },
+        { img: buque15, nome: "Rosa no Cone Dia das Mães (consultar cor)", preco: "30,00" },
+        { img: buque14, nome: "Buquê coreano 5 rosas", preco: "160,00" },
+        { img: buque12, nome: "Solitário girassol Van Gogh", preco: "50,00" },
+        { img: buque11, nome: "Cone Rosa", preco: "30,00" },
+        { img: buque13, nome: "Buquê 3 rosas", preco: "90,00" },
+        { img: buque10, nome: "Buquê rosas mistas", preco: "190,00" },
+        { img: buque8, nome: "Buquê 15 rosas vermelhas", preco: "375,00" },
+        { img: buque9, nome: "Box rosas e astromélias", preco: "199,00" },
+        { img: buque7, nome: "Cartão Coração", preco: "59,90" },
+        { img: buque5, nome: "Buquê 10 rosas", preco: "270,00" },
+        { img: buque6, nome: "Buquê 7 rosas mistas G", preco: "230,00" },
+        { img: buque4, nome: "Buquê 3 rosas Pink", preco: "90,00" },
+        { img: buque3, nome: "Solitário girassol e rosa azul", preco: "80,00" }
+        */
+      ].map((p, index) => (
+        <div className="card-venda" key={index}>
+          <div className="foto-prod">
+            <img src={p.img} alt={p.nome} className="imagem-real" />
+          </div>
+          <h3>{p.nome}</h3>
+          <p>R$ {p.preco}</p>
+          <button onClick={() => comprarWpp(p.nome)}>Pedir no WhatsApp</button>
+        </div>
+      ))}
+    </div>
+    <button className="botao-voltar-secao" onClick={() => setSecaoInterna(null)}>
+      ← Voltar
+    </button>
+  </div>
+)}
 
             {secaoInterna === 'cestas' && (
               <div className="area-produtos">
@@ -283,7 +297,13 @@ function App() {
                     { img: maes18, nome: "Box Flowers", preco: "198,00" },
                     { img: maes19, nome: "Box com pulseira duplo banho a ouro hipoalergênica/Espada de São Jorge coração", preco: "250,00" },
                     { img: maes20, nome: "Espada de São Jorge em formato de coração", preco: "40,00" },
-                    { img: maes21, nome: "Orquídea pote 12", preco: "140,00" }
+                    { img: maes21, nome: "Orquídea pote 12", preco: "140,00" },
+                    { img: maes22, nome: "Rosa no cone", preco: "30,00" },
+                    { img: maes23, nome: "Buquê 3 rosas", preco: "90,00" },
+                    { img: maes24, nome: "Buquê 5 rosas mais astromelias", preco: "160,00" },
+                    { img: maes25, nome: "Tradicional de 12 rosas", preco: "300,00" },
+                    { img: maes26, nome: "Buquê astromelias mistas 10 hastes", preco: "120,00" },
+                    { img: maes27, nome: "Vaso tulipas naturais com balão ", preco: "85,00" }
                   ].map((p, index) => (
                     <div className="card-venda" key={index}>
                       <div className="foto-prod"><img src={p.img} alt={p.nome} className="imagem-real" /></div>
