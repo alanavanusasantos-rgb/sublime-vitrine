@@ -3,6 +3,7 @@
 :root {
   --rosa-chiclete: #e96075;
   --branco: #ffffff;
+  --fundo-claro: #f8ecee;
 }
 
 /* RESET E TELA CHEIA */
@@ -11,7 +12,7 @@ html, body, #root {
   padding: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--rosa-chiclete) !important;
+  background-color: var(--fundo-claro) !important;
   overflow: hidden; 
 }
 
@@ -21,14 +22,14 @@ html, body, #root {
 
 body {
   font-family: 'Montserrat', sans-serif;
-  color: var(--branco);
+  color: var(--rosa-chiclete);
 }
 
 .container-geral {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: var(--rosa-chiclete);
+  background-color: var(--fundo-claro);
   justify-content: space-between;
   position: relative;
 }
@@ -57,7 +58,7 @@ body {
 .linha-header {
   position: absolute;
   left: 10%; right: 10%; height: 1px;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(233, 96, 117, 0.4);
   top: 50%; transform: translateY(-50%);
   z-index: 1;
 }
@@ -71,11 +72,11 @@ body {
 
 .nav-links-central a {
   text-decoration: none;
-  color: var(--branco);
+  color: var(--rosa-chiclete);
   font-family: 'Dancing Script', cursive;
   font-size: 1.5rem;
   padding: 0 15px;
-  background-color: var(--rosa-chiclete);
+  background-color: var(--fundo-claro);
   transition: transform 0.3s ease !important;
   display: inline-block;
 }
@@ -109,7 +110,7 @@ body {
 .titulo-sobre {
   font-family: 'Dancing Script', cursive;
   font-size: 3.2rem;
-  color: var(--branco);
+  color: var(--rosa-chiclete);
   margin-bottom: 10px;
 }
 
@@ -118,7 +119,7 @@ body {
   font-size: 1.8rem;
   max-width: 700px;
   line-height: 1.3;
-  color: var(--branco);
+  color: var(--rosa-chiclete);
 }
 
 .paragrafo-emocionante {
@@ -126,7 +127,7 @@ body {
   font-size: 1.6rem;
   max-width: 750px;
   line-height: 1.5;
-  color: var(--branco);
+  color: var(--rosa-chiclete);
   opacity: 0.95;
   margin-top: 15px;
 }
@@ -135,16 +136,16 @@ body {
   font-family: 'Dancing Script', cursive;
   font-size: 2rem;
   margin-top: 15px;
-  color: var(--branco);
+  color: var(--rosa-chiclete);
 }
 
 .nome-sublime { font-weight: 700; text-decoration: underline; }
-.slogan-texto { font-family: 'Dancing Script', cursive; font-size: 1.8rem; max-width: 700px; color: var(--branco); }
+.slogan-texto { font-family: 'Dancing Script', cursive; font-size: 1.8rem; max-width: 700px; color: var(--rosa-chiclete); }
 
 /* BOTÕES ESTILO PÍLULA COM ZOOM */
 .botao-explorar, .link-contato-social {
-  background-color: var(--branco);
-  color: var(--rosa-chiclete);
+  background-color: var(--rosa-chiclete);
+  color: var(--branco);
   border: none;
   font-family: 'Dancing Script', cursive;
   font-weight: 700;
@@ -171,11 +172,11 @@ body {
 .secao-item { display: flex; flex-direction: column; align-items: center; gap: 15px; cursor: pointer; transition: 0.3s ease !important; }
 .secao-item:hover { transform: scale(1.2) !important; }
 .circulo-icone { width: 110px; height: 110px; background-color: var(--branco); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 3.5rem; }
-.secao-item span { font-family: 'Dancing Script', cursive; font-size: 1.8rem; color: var(--branco); }
+.secao-item span { font-family: 'Dancing Script', cursive; font-size: 1.8rem; color: var(--rosa-chiclete); }
 
 /* RODAPÉ */
 .footer-copyright { width: 100%; padding: 15px 0; text-align: center; z-index: 10; }
-.footer-copyright p { margin: 0; font-size: 0.8rem; opacity: 0.8; color: var(--branco); }
+.footer-copyright p { margin: 0; font-size: 0.8rem; opacity: 0.8; color: var(--rosa-chiclete); }
 
 /* VITRINE */
 .area-produtos { display: flex; flex-direction: column; align-items: center; width: 100%; padding-bottom: 50px; }
@@ -205,88 +206,5 @@ body {
 .card-venda p { color: #333; font-weight: bold; margin-bottom: 10px; font-size: 1.1rem; }
 .card-venda button { background: var(--rosa-chiclete); color: white; border: none; padding: 8px; border-radius: 20px; cursor: pointer; font-size: 0.7rem; width: 100%; font-weight: bold; transition: 0.2s; }
 
-.botao-voltar-secao { margin-top: 30px; background: none; border: 1px solid white; color: white; padding: 8px 25px; border-radius: 30px; cursor: pointer; transition: 0.3s; }
-.botao-voltar-secao:hover { background: white; color: var(--rosa-chiclete); }
-.botao-voltar-fixo {
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  z-index: 999;
-  background: var(--branco);
-  color: var(--rosa-chiclete);
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  font-size: 1.2rem;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-/* Configuração da foto de fundo no banner inicial */
-.banner-com-foto {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('./assets/diadasmaes.jpeg'); /* Caminho da sua imagem */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-}
-
-.banner-com-foto {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* background-image será aplicado pelo style inline no JSX */
-  background-size: contain; 
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: var(--rosa-chiclete); /* Cor de fundo para as bordas */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-}
-/* Container que centraliza o card e o botão */
-.bloco-central {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  z-index: 5;
-  position: relative;
-}
-
-/* O Card com borda branca e sombra */
-.card-foto-dia-das-maes {
-  background: white;
-  padding: 12px; /* Espessura da moldura branca */
-  border-radius: 30px; /* Cantos arredondados como no print */
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
-  max-width: 90%; /* Responsivo para celular */
-  line-height: 0;
-}
-
-.foto-destaque {
-  max-height: 60vh; /* Altura ideal para sobrar espaço para as Sakuras */
-  border-radius: 20px; /* Arredonda a foto também */
-  display: block;
-}
-
-/* Garante que as Sakuras fiquem nos cantos certinho */
-.sakura-topo, .sakura-baixo {
-  z-index: 2; /* Atrás do card, mas na frente do fundo rosa */
-}
-
+.botao-voltar-secao { margin-top: 30px; background: none; border: 1px solid var(--rosa-chiclete); color: var(--rosa-chiclete); padding: 8px 25px; border-radius: 30px; cursor: pointer; transition: 0.3s; }
+.botao-voltar-secao:hover { background: var(--rosa-chiclete); color: white; }

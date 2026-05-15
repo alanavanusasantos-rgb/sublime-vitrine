@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
 import sakura from './assets/sakura.png';
-import diadasmaes from './assets/diadasmaes.jpeg';
+import logorosa from './assets/logorosa.png'
 
 // --- IMPORTAÇÕES DAS IMAGENS ---
-import aviso from './assets/aviso.jpeg';
-{/*
 import buque15 from './assets/buque15.jpeg';
 import buque14 from './assets/buque14.jpeg';
 import buque12 from './assets/buque12.jpeg';
@@ -20,7 +18,7 @@ import buque6 from './assets/buque6.jpeg';
 import buque4 from './assets/buque4.jpeg';
 import buque3 from './assets/buque3.jpeg';
 import buque16 from './assets/buque16.jpeg';
-import buque17 from './assets/buque17.jpeg';*/}
+import buque17 from './assets/buque17.jpeg';
 
 import cesta1 from './assets/cesta1.jpeg';
 import cesta2 from './assets/cesta2.jpeg';
@@ -115,8 +113,8 @@ function App() {
         
         {abaAtiva === 'inicio' && (
           <div className="bloco-central">
-            <div className="card-foto-dia-das-maes">
-              <img src={diadasmaes} alt="Especial Dia das Mães" className="foto-destaque" />
+            <div className="logo.png">
+              <img src={logorosa} alt="Logo Sublime Rosa" className="logo-banner-gigante" />
             </div>
             <button className="botao-explorar" onClick={() => setAbaAtiva('explorar')}>Explorar Coleção</button>
           </div>
@@ -154,8 +152,7 @@ function App() {
     <h2 className="titulo-sobre">Nossos Buquês</h2>
     <div className="vitrine-vendas">
       {[
-        { img: aviso, nome: "Buquês personalizados (consultar opções)", preco: "Consulte aqui" }
-        /* { img: buque17, nome: "Orquídea cascata pote 15", preco: "180,00" },
+        { img: buque17, nome: "Orquídea cascata pote 15", preco: "180,00" },
         { img: buque16, nome: "Bambu da Sorte (consultar cor)", preco: "50,00" },
         { img: buque15, nome: "Rosa no Cone Dia das Mães (consultar cor)", preco: "30,00" },
         { img: buque14, nome: "Buquê coreano 5 rosas", preco: "160,00" },
@@ -170,7 +167,6 @@ function App() {
         { img: buque6, nome: "Buquê 7 rosas mistas G", preco: "230,00" },
         { img: buque4, nome: "Buquê 3 rosas Pink", preco: "90,00" },
         { img: buque3, nome: "Solitário girassol e rosa azul", preco: "80,00" }
-        */
       ].map((p, index) => (
         <div className="card-venda" key={index}>
           <div className="foto-prod">
