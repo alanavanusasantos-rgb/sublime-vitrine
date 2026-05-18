@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
+import logorosa from './assets/logorosa.png'; // Alterado para logorosa
 import sakura from './assets/sakura.png';
-import logorosa from './assets/logorosa.png'
 
 // --- IMPORTAÇÕES DAS IMAGENS ---
-import buque15 from './assets/buque15.jpeg';
 import buque14 from './assets/buque14.jpeg';
 import buque12 from './assets/buque12.jpeg';
 import buque11 from './assets/buque11.jpeg';
@@ -17,8 +16,6 @@ import buque5 from './assets/buque5.jpeg';
 import buque6 from './assets/buque6.jpeg';
 import buque4 from './assets/buque4.jpeg';
 import buque3 from './assets/buque3.jpeg';
-import buque16 from './assets/buque16.jpeg';
-import buque17 from './assets/buque17.jpeg';
 
 import cesta1 from './assets/cesta1.jpeg';
 import cesta2 from './assets/cesta2.jpeg';
@@ -27,59 +24,17 @@ import cesta4 from './assets/cesta4.jpeg';
 import cesta5 from './assets/cesta5.jpeg';
 import cesta6 from './assets/cesta6.jpeg';
 import cesta7 from './assets/cesta7.jpeg';
-import cesta8 from './assets/cesta8.jpeg';
-import cesta9 from './assets/cesta9.jpeg';
-import cesta10 from './assets/cesta10.jpeg';
-import cesta11 from './assets/cesta11.jpeg';
-import cesta12 from './assets/cesta12.jpeg';
-import cesta13 from './assets/cesta13.jpeg';
-import cesta14 from './assets/cesta14.jpeg';
-import cesta15 from './assets/cesta15.jpeg';
-import cesta16 from './assets/cesta16.jpeg';
-import cesta17 from './assets/cesta17.jpeg';
-import cesta18 from './assets/cesta18.jpeg';
-import cesta19 from './assets/cesta19.jpeg';
-import cesta20 from './assets/cesta20.jpeg';
 
 import cuia1 from './assets/cuia1.jpeg';
 import cuia2 from './assets/cuia2.jpeg';
 import cuia3 from './assets/cuia3.jpeg';
 import cuia4 from './assets/cuia4.jpeg';
 import mateira2 from './assets/mateira2.jpeg';
-import mateira4 from './assets/mateira4.jpeg';
 
 import caneca1 from './assets/caneca1.jpeg';
 import caneca2 from './assets/caneca2.jpeg';
 import caneca3 from './assets/caneca3.jpeg';
 import caneca4 from './assets/caneca4.jpeg';
-
-import maes1 from './assets/maes1.jpeg';
-import maes2 from './assets/maes2.jpeg';
-import maes3 from './assets/maes3.jpeg';
-import maes4 from './assets/maes4.jpeg';
-import maes5 from './assets/maes5.jpeg';
-import maes6 from './assets/maes6.jpeg';
-import maes7 from './assets/maes7.jpeg';
-import maes8 from './assets/maes8.jpeg';
-import maes9 from './assets/maes9.jpeg';
-import maes10 from './assets/maes10.jpeg';
-import maes11 from './assets/maes11.jpeg';
-import maes12 from './assets/maes12.jpeg';
-import maes13 from './assets/maes13.jpeg';
-import maes14 from './assets/maes14.jpeg';
-import maes15 from './assets/maes15.jpeg';
-import maes16 from './assets/maes16.jpeg';
-import maes17 from './assets/maes17.jpeg';
-import maes18 from './assets/maes18.jpeg';
-import maes19 from './assets/maes19.jpeg';
-import maes20 from './assets/maes20.jpeg';
-import maes21 from './assets/maes21.jpeg';
-import maes22 from './assets/maes22.jpeg';
-import maes23 from './assets/maes23.jpeg';
-import maes24 from './assets/maes24.jpeg';
-import maes25 from './assets/maes25.jpeg';
-import maes26 from './assets/maes26.jpeg';
-import maes27 from './assets/maes27.jpeg';
 
 function App() {
   const [abaAtiva, setAbaAtiva] = useState('inicio');
@@ -91,12 +46,7 @@ function App() {
   };
 
   return (
-    <div className={`container-geral ${secaoInterna || abaAtiva !== 'inicio' ? 'modo-vitrine' : ''}`}>
-      
-      {abaAtiva !== 'inicio' && (
-        <button className="botao-voltar-fixo" onClick={() => { setSecaoInterna(null); setAbaAtiva('inicio'); }}>←</button>
-      )}
-
+    <div className={`container-geral ${secaoInterna ? 'modo-vitrine' : ''}`}>
       <img src={sakura} alt="" className="sakura-topo" />
       <img src={sakura} alt="" className="sakura-baixo" />
       
@@ -113,15 +63,16 @@ function App() {
         
         {abaAtiva === 'inicio' && (
           <div className="bloco-central">
-            <div className="logo.png">
-              <img src={logorosa} alt="Logo Sublime Rosa" className="logo-banner-gigante" />
-            </div>
+            <img src={logorosa} alt="Logo Sublime" className="logo-banner-gigante" /> {/* Alterado para logorosa */}
+            <p className="slogan-texto">✨Presentear é um ato de amor💐</p>
             <button className="botao-explorar" onClick={() => setAbaAtiva('explorar')}>Explorar Coleção</button>
           </div>
         )}
 
         {abaAtiva === 'explorar' && (
           <div className="container-explorar" style={{ width: '100%' }}>
+            
+            {/* GRID DE CATEGORIAS - SÓ APARECE SE NADA FOR CLICADO */}
             {!secaoInterna && (
               <div className="grid-secoes">
                 <div className="secao-item" onClick={() => setSecaoInterna('buques')}>
@@ -140,75 +91,53 @@ function App() {
                   <div className="circulo-icone">🧉</div>
                   <span>Chimas</span>
                 </div>
-                <div className="secao-item" onClick={() => setSecaoInterna('diadasmaes')}>
-                  <div className="circulo-icone">💖</div>
-                  <span>Dia das Mães</span>
-                </div>
               </div>
             )}
 
+            {/* VITRINE DE BUQUÊS */}
             {secaoInterna === 'buques' && (
-  <div className="area-produtos">
-    <h2 className="titulo-sobre">Nossos Buquês</h2>
-    <div className="vitrine-vendas">
-      {[
-        { img: buque17, nome: "Orquídea cascata pote 15", preco: "180,00" },
-        { img: buque16, nome: "Bambu da Sorte (consultar cor)", preco: "50,00" },
-        { img: buque15, nome: "Rosa no Cone Dia das Mães (consultar cor)", preco: "30,00" },
-        { img: buque14, nome: "Buquê coreano 5 rosas", preco: "160,00" },
-        { img: buque12, nome: "Solitário girassol Van Gogh", preco: "50,00" },
-        { img: buque11, nome: "Cone Rosa", preco: "30,00" },
-        { img: buque13, nome: "Buquê 3 rosas", preco: "90,00" },
-        { img: buque10, nome: "Buquê rosas mistas", preco: "190,00" },
-        { img: buque8, nome: "Buquê 15 rosas vermelhas", preco: "375,00" },
-        { img: buque9, nome: "Box rosas e astromélias", preco: "199,00" },
-        { img: buque7, nome: "Cartão Coração", preco: "59,90" },
-        { img: buque5, nome: "Buquê 10 rosas", preco: "270,00" },
-        { img: buque6, nome: "Buquê 7 rosas mistas G", preco: "230,00" },
-        { img: buque4, nome: "Buquê 3 rosas Pink", preco: "90,00" },
-        { img: buque3, nome: "Solitário girassol e rosa azul", preco: "80,00" }
-      ].map((p, index) => (
-        <div className="card-venda" key={index}>
-          <div className="foto-prod">
-            <img src={p.img} alt={p.nome} className="imagem-real" />
-          </div>
-          <h3>{p.nome}</h3>
-          <p>R$ {p.preco}</p>
-          <button onClick={() => comprarWpp(p.nome)}>Pedir no WhatsApp</button>
-        </div>
-      ))}
-    </div>
-    <button className="botao-voltar-secao" onClick={() => setSecaoInterna(null)}>
-      ← Voltar
-    </button>
-  </div>
-)}
+              <div className="area-produtos">
+                <h2 className="titulo-sobre">Nossos Buquês</h2>
+                <div className="vitrine-vendas">
+                  {[
+                    { img: buque14, nome: "Buquê coreano 5 rosas", preco: "160,00" },
+                    { img: buque12, nome: "Solitário girassol Van Gogh", preco: "50,00" },
+                    { img: buque11, nome: "Cone Rosa", preco: "30,00" },
+                    { img: buque13, nome: "Buquê 3 rosas", preco: "90,00" },
+                    { img: buque10, nome: "Buquê rosas mistas", preco: "190,00" },
+                    { img: buque8, nome: "Buquê 15 rosas vermelhas", preco: "375,00" },
+                    { img: buque9, nome: "Box rosas e astromélias", preco: "199,00" },
+                    { img: buque7, nome: "Cartão Coração", preco: "59,90" },
+                    { img: buque5, nome: "Buquê 10 rosas", preco: "270,00" },
+                    { img: buque6, nome: "Buquê 7 rosas mistas G", preco: "230,00" },
+                    { img: buque4, nome: "Buquê 3 rosas Pink", preco: "90,00" },
+                    { img: buque3, nome: "Solitário girassol e rosa azul", preco: "80,00" }
+                  ].map((p, index) => (
+                    <div className="card-venda" key={index}>
+                      <div className="foto-prod"><img src={p.img} alt={p.nome} className="imagem-real" /></div>
+                      <h3>{p.nome}</h3>
+                      <p>R$ {p.preco}</p>
+                      <button onClick={() => comprarWpp(p.nome)}>Pedir no WhatsApp</button>
+                    </div>
+                  ))}
+                </div>
+                <button className="botao-voltar-secao" onClick={() => setSecaoInterna(null)}>←</button>
+              </div>
+            )}
 
+            {/* VITRINE DE CESTAS */}
             {secaoInterna === 'cestas' && (
               <div className="area-produtos">
                 <h2 className="titulo-sobre">Cestas Especiais</h2>
                 <div className="vitrine-vendas">
                   {[
-                    { img: cesta1, nome: "Cesta personalizável 1", preco: "Consulte aqui" },
-                    { img: cesta2, nome: "Cesta personalizável 2", preco: "Consulte aqui" },
-                    { img: cesta3, nome: "Cesta personalizável 3", preco: "Consulte aqui" },
-                    { img: cesta4, nome: "Cesta personalizável 4", preco: "Consulte aqui" },
-                    { img: cesta5, nome: "Cesta personalizável 5", preco: "Consulte aqui" },
-                    { img: cesta6, nome: "Cesta personalizável 6", preco: "Consulte aqui" },
-                    { img: cesta7, nome: "Cesta personalizável 7", preco: "Consulte aqui" },
-                    { img: cesta8, nome: "Cesta Pronta 1", preco: "R$ 205,00" },
-                    { img: cesta9, nome: "Cesta Pronta 2", preco: "R$ 200,00" },
-                    { img: cesta10, nome: "Cesta Pronta 3", preco: "R$ 335,00" },
-                    { img: cesta11, nome: "Cesta Pronta 4", preco: "R$ 219,00" },
-                    { img: cesta12, nome: "Cesta Mãe", preco: "R$ 212,00" },
-                    { img: cesta13, nome: "Box Cacau Show", preco: "R$ 230,00" },
-                    { img: cesta14, nome: "Cesta Pronta 5", preco: "R$ 190,00" },
-                    { img: cesta15, nome: "Cesta Pronta 6", preco: "R$ 100,00" },
-                    { img: cesta16, nome: "Cesta Pronta 7", preco: "R$ 150,00" },
-                    { img: cesta17, nome: "Cesta Pronta 8", preco: "R$ 215,00" },
-                    { img: cesta18, nome: "Cesta Pronta 9", preco: "R$ 160,00" },
-                    { img: cesta19, nome: "Cesta personalizada aniversário", preco: "Consulte aqui" },
-                    { img: cesta20, nome: "Box aniversário de 15 anos", preco: "Consulte aqui" }
+                    { img: cesta1, nome: "Cesta personalizável", preco: "Consulte aqui" },
+                    { img: cesta2, nome: "Cesta personalizável", preco: "Consulte aqui" },
+                    { img: cesta3, nome: "Cesta personalizável", preco: "Consulte aqui" },
+                    { img: cesta4, nome: "Cesta personalizável", preco: "Consulte aqui" },
+                    { img: cesta5, nome: "Cesta personalizável", preco: "Consulte aqui" },
+                    { img: cesta6, nome: "Cesta personalizável", preco: "Consulte aqui" },
+                    { img: cesta7, nome: "Cesta personalizável", preco: "Consulte aqui" }
                   ].map((p, index) => (
                     <div className="card-venda" key={index}>
                       <div className="foto-prod"><img src={p.img} alt={p.nome} className="imagem-real" /></div>
@@ -218,10 +147,11 @@ function App() {
                     </div>
                   ))}
                 </div>
-                <button className="botao-voltar-secao" onClick={() => setSecaoInterna(null)}>← Voltar</button>
+                <button className="botao-voltar-secao" onClick={() => setSecaoInterna(null)}>←</button>
               </div>
             )}
 
+            {/* VITRINE DE CHIMAS */}
             {secaoInterna === 'chimas' && (
               <div className="area-produtos">
                 <h2 className="titulo-sobre">Linha Chimas</h2>
@@ -231,8 +161,7 @@ function App() {
                     { img: cuia2, nome: "Cuia gravada", preco: "R$ 100,00" },
                     { img: cuia3, nome: "Cuia glitter", preco: "R$ 90,00" },
                     { img: cuia4, nome: "Cuia gravada", preco: "R$ 100,00" },
-                    { img: mateira2, nome: "Mateira 3pçs", preco: "R$ 290,00" },
-                    { img: mateira4, nome: "Kit mateira completo", preco: "R$ 420,00" }
+                    { img: mateira2, nome: "Mateira 3pçs", preco: "R$ 290,00" }
                   ].map((p, index) => (
                     <div className="card-venda" key={index}>
                       <div className="foto-prod"><img src={p.img} alt={p.nome} className="imagem-real" /></div>
@@ -242,10 +171,11 @@ function App() {
                     </div>
                   ))}
                 </div>
-                <button className="botao-voltar-secao" onClick={() => setSecaoInterna(null)}>← Voltar</button>
+                <button className="botao-voltar-secao" onClick={() => setSecaoInterna(null)}>←</button>
               </div>
             )}
 
+            {/* VITRINE DE PERSONALIZADOS */}
             {secaoInterna === 'personalizados' && (
               <div className="area-produtos">
                 <h2 className="titulo-sobre">Personalizados</h2>
@@ -264,42 +194,18 @@ function App() {
                     </div>
                   ))}
                 </div>
-                <button className="botao-voltar-secao" onClick={() => setSecaoInterna(null)}>← Voltar</button>
+                <button className="botao-voltar-secao" onClick={() => setSecaoInterna(null)}>←</button>
               </div>
             )}
-
-            {secaoInterna === 'diadasmaes' && (
+          </div>
+        )}
+{/* VITRINE DE FLORICULTURA */}
+            {secaoInterna === 'floricultura' && (
               <div className="area-produtos">
-                <h2 className="titulo-sobre">Dia das Mães</h2>
+                <h2 className="titulo-sobre">Floricultura</h2>
                 <div className="vitrine-vendas">
                   {[
-                    { img: maes1, nome: "Pronta entrega Especial", preco: "110,00" },
-                    { img: maes2, nome: "Perfume Árabe + Bolsa", preco: "490,00" },
-                    { img: maes3, nome: "Orquídea", preco: "160,00" },
-                    { img: maes4, nome: "Orquídea", preco: "160,00" },
-                    { img: maes5, nome: "Orquídea", preco: "160,00" },
-                    { img: maes6, nome: "Orquídea Maior", preco: "180,00" },
-                    { img: maes7, nome: "Orquídea Maior", preco: "180,00" },
-                    { img: maes8, nome: "Orquídea Maior", preco: "180,00" },
-                    { img: maes9, nome: "Orquídea Maior", preco: "180,00" },
-                    { img: maes10, nome: "Orquídea Maior", preco: "180,00" },
-                    { img: maes11, nome: "Cesta Orquídea", preco: "180,00" },
-                    { img: maes12, nome: "Cesta Palha", preco: "190,00" },
-                    { img: maes13, nome: "Box Bambu", preco: "230,00" },
-                    { img: maes14, nome: "Box Green", preco: "245,00" },
-                    { img: maes15, nome: "Box Pink", preco: "180,00" },
-                    { img: maes16, nome: "Bambu", preco: "60,00" },
-                    { img: maes17, nome: "Box Flowers", preco: "198,00" },
-                    { img: maes18, nome: "Box Flowers", preco: "198,00" },
-                    { img: maes19, nome: "Box com pulseira duplo banho a ouro hipoalergênica/Espada de São Jorge coração", preco: "250,00" },
-                    { img: maes20, nome: "Espada de São Jorge em formato de coração", preco: "40,00" },
-                    { img: maes21, nome: "Orquídea pote 12", preco: "140,00" },
-                    { img: maes22, nome: "Rosa no cone", preco: "30,00" },
-                    { img: maes23, nome: "Buquê 3 rosas", preco: "90,00" },
-                    { img: maes24, nome: "Buquê 5 rosas mais astromelias", preco: "160,00" },
-                    { img: maes25, nome: "Tradicional de 12 rosas", preco: "300,00" },
-                    { img: maes26, nome: "Buquê astromelias mistas 10 hastes", preco: "120,00" },
-                    { img: maes27, nome: "Vaso tulipas naturais com balão ", preco: "85,00" }
+                 
                   ].map((p, index) => (
                     <div className="card-venda" key={index}>
                       <div className="foto-prod"><img src={p.img} alt={p.nome} className="imagem-real" /></div>
@@ -309,22 +215,14 @@ function App() {
                     </div>
                   ))}
                 </div>
-                <button className="botao-voltar-secao" onClick={() => setSecaoInterna(null)}>← Voltar</button>
+                <button className="botao-voltar-secao" onClick={() => setSecaoInterna(null)}>←</button>
               </div>
             )}
-          </div>
-        )}
-            
+
         {abaAtiva === 'sobre' && (
           <div className="bloco-texto-sobre">
             <h2 className="titulo-sobre">Nossa Essência</h2>
-            <p className="slogan-texto">
-              Somos especialistas em presentes, por que entendemos que presentear vai muito além de comprar algo e entregar...
-            </p>
-            <p className="slogan-texto">
-              Nascemos de um acaso, nosso trabalho é um amor construído...
-            </p>
-            <h2 className="titulo-sobre">Com carinho, Equipe Sublime ✨</h2>
+            <p className="assinatura">Somos especialistas em presentes, por que entendemos que presentear vai muito além de comprar algo e entregar, se trata de demonstrar que aquela pessoa é especial e merece dedicação na escolha e produção de cada detalhe, estamos sempre em busca de inovação, mas sem perder a nossa essência que é a proximidade com nossos clientes, que se tornam nossos amigos. Nascemos de um acaso, nosso trabalho é um amor construído, entregamos sorrisos e compartilhamos momentos, e entre laços e flores, entregamos em cada presente um pouquinho de nós, vamos construindo juntos essa história história “Sublime”, que está só começando… Com amor, Equipe Sublime ✨</p>
           </div>
         )}
 

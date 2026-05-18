@@ -3,7 +3,7 @@
 :root {
   --rosa-chiclete: #e96075;
   --branco: #ffffff;
-  --fundo-claro: #f8ecee;
+  --fundo-claro: #f8ecee; /* Cor clarinha adicionada */
 }
 
 /* RESET E TELA CHEIA */
@@ -12,7 +12,7 @@ html, body, #root {
   padding: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--fundo-claro) !important;
+  background-color: var(--fundo-claro) !important; /* Alterado para o claro */
   overflow: hidden; 
 }
 
@@ -22,14 +22,14 @@ html, body, #root {
 
 body {
   font-family: 'Montserrat', sans-serif;
-  color: var(--rosa-chiclete);
+  color: var(--rosa-chiclete); /* Alterado para rosa escuro */
 }
 
 .container-geral {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: var(--fundo-claro);
+  background-color: var(--fundo-claro); /* Alterado para o claro */
   justify-content: space-between;
   position: relative;
 }
@@ -58,7 +58,7 @@ body {
 .linha-header {
   position: absolute;
   left: 10%; right: 10%; height: 1px;
-  background-color: rgba(233, 96, 117, 0.4);
+  background-color: rgba(233, 96, 117, 0.4); /* Ajustado para rosa suave */
   top: 50%; transform: translateY(-50%);
   z-index: 1;
 }
@@ -72,11 +72,11 @@ body {
 
 .nav-links-central a {
   text-decoration: none;
-  color: var(--rosa-chiclete);
+  color: var(--rosa-chiclete); /* Alterado para rosa escuro */
   font-family: 'Dancing Script', cursive;
   font-size: 1.5rem;
   padding: 0 15px;
-  background-color: var(--fundo-claro);
+  background-color: var(--fundo-claro); /* Alterado para o claro */
   transition: transform 0.3s ease !important;
   display: inline-block;
 }
@@ -110,7 +110,7 @@ body {
 .titulo-sobre {
   font-family: 'Dancing Script', cursive;
   font-size: 3.2rem;
-  color: var(--rosa-chiclete);
+  color: var(--rosa-chiclete); /* Alterado para rosa escuro */
   margin-bottom: 10px;
 }
 
@@ -119,7 +119,7 @@ body {
   font-size: 1.8rem;
   max-width: 700px;
   line-height: 1.3;
-  color: var(--rosa-chiclete);
+  color: var(--rosa-chiclete); /* Alterado para rosa escuro */
 }
 
 .paragrafo-emocionante {
@@ -127,7 +127,7 @@ body {
   font-size: 1.6rem;
   max-width: 750px;
   line-height: 1.5;
-  color: var(--rosa-chiclete);
+  color: var(--rosa-chiclete); /* Alterado para rosa escuro */
   opacity: 0.95;
   margin-top: 15px;
 }
@@ -136,15 +136,15 @@ body {
   font-family: 'Dancing Script', cursive;
   font-size: 2rem;
   margin-top: 15px;
-  color: var(--rosa-chiclete);
+  color: var(--rosa-chiclete); /* Alterado para rosa escuro */
 }
 
 .nome-sublime { font-weight: 700; text-decoration: underline; }
-.slogan-texto { font-family: 'Dancing Script', cursive; font-size: 1.8rem; max-width: 700px; color: var(--rosa-chiclete); }
+.slogan-texto { font-family: 'Dancing Script', cursive; font-size: 1.8rem; max-width: 700px; color: var(--rosa-chiclete); } /* Alterado para rosa escuro */
 
 /* BOTÕES ESTILO PÍLULA COM ZOOM */
 .botao-explorar, .link-contato-social {
-  background-color: var(--rosa-chiclete);
+  background-color: var(--rosa-chiclete); /* Invertido para destacar no fundo claro */
   color: var(--branco);
   border: none;
   font-family: 'Dancing Script', cursive;
@@ -172,11 +172,11 @@ body {
 .secao-item { display: flex; flex-direction: column; align-items: center; gap: 15px; cursor: pointer; transition: 0.3s ease !important; }
 .secao-item:hover { transform: scale(1.2) !important; }
 .circulo-icone { width: 110px; height: 110px; background-color: var(--branco); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 3.5rem; }
-.secao-item span { font-family: 'Dancing Script', cursive; font-size: 1.8rem; color: var(--rosa-chiclete); }
+.secao-item span { font-family: 'Dancing Script', cursive; font-size: 1.8rem; color: var(--rosa-chiclete); } /* Alterado para rosa escuro */
 
 /* RODAPÉ */
 .footer-copyright { width: 100%; padding: 15px 0; text-align: center; z-index: 10; }
-.footer-copyright p { margin: 0; font-size: 0.8rem; opacity: 0.8; color: var(--rosa-chiclete); }
+.footer-copyright p { margin: 0; font-size: 0.8rem; opacity: 0.8; color: var(--rosa-chiclete); } /* Alterado para rosa escuro */
 
 /* VITRINE */
 .area-produtos { display: flex; flex-direction: column; align-items: center; width: 100%; padding-bottom: 50px; }
@@ -206,5 +206,32 @@ body {
 .card-venda p { color: #333; font-weight: bold; margin-bottom: 10px; font-size: 1.1rem; }
 .card-venda button { background: var(--rosa-chiclete); color: white; border: none; padding: 8px; border-radius: 20px; cursor: pointer; font-size: 0.7rem; width: 100%; font-weight: bold; transition: 0.2s; }
 
-.botao-voltar-secao { margin-top: 30px; background: none; border: 1px solid var(--rosa-chiclete); color: var(--rosa-chiclete); padding: 8px 25px; border-radius: 30px; cursor: pointer; transition: 0.3s; }
-.botao-voltar-secao:hover { background: var(--rosa-chiclete); color: white; }
+/* O SEU BOTÃO DE VOLTAR - REDONDINHO NO CANTO SUPERIOR ESQUERDO */
+.botao-voltar-secao {
+  position: fixed !important;
+  top: 20px !important;
+  left: 20px !important;
+  width: 45px !important;
+  height: 45px !important;
+  border-radius: 50% !important;
+  background-color: var(--branco) !important;
+  color: var(--rosa-chiclete) !important;
+  border: 1px solid var(--rosa-chiclete) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 9999 !important;
+  cursor: pointer !important;
+  font-size: 1.5rem !important;
+  font-weight: bold !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1) !important;
+  transition: 0.3s ease !important;
+  text-indent: 0 !important;
+  padding: 0 5px 0 0 !important; /* Ajuste milimétrico para centralizar a seta */
+}
+
+.botao-voltar-secao:hover {
+  background-color: var(--rosa-chiclete) !important;
+  color: var(--branco) !important;
+  transform: scale(1.1) !important;
+}
