@@ -17,6 +17,7 @@ import buque5 from './assets/buque5.jpeg';
 import buque6 from './assets/buque6.jpeg';
 import buque4 from './assets/buque4.jpeg';
 import buque3 from './assets/buque3.jpeg';
+import buque18 from './assets/buque18.jpeg';
 
 import cesta1 from './assets/cesta1.jpeg';
 import cesta2 from './assets/cesta2.jpeg';
@@ -146,7 +147,8 @@ function App() {
                     { img: buque5, nome: "Buquê 10 rosas", preco: "270,00" },
                     { img: buque6, nome: "Buquê 7 rosas mistas G", preco: "230,00" },
                     { img: buque4, nome: "Buquê 3 rosas Pink", preco: "90,00" },
-                    { img: buque3, nome: "Solitário girassol e rosa azul", preco: "80,00" }
+                    { img: buque3, nome: "Solitário girassol e rosa azul", preco: "80,00" },
+                    { img: buque18, nome: "Buquê Ferrero Rocher 12 rosas", preco: "350,00" }
                   ].map((p, index) => (
                     <div className="card-venda" key={index}>
                       <div className="foto-prod"><img src={p.img} alt={p.nome} className="imagem-real" /></div>
