@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
-import logorosa from './assets/logorosa.png'; // Alterado para logorosa
 import sakura from './assets/sakura.png';
+import namorados from './assets/namorados.jpeg';
+import namorados1 from './assets/namorados1.jpeg';
 
 // --- IMPORTAÇÕES DAS IMAGENS ---
 import buque14 from './assets/buque14.jpeg';
@@ -62,17 +63,27 @@ function App() {
       <main className="conteudo-principal">
         
         {abaAtiva === 'inicio' && (
-          <div className="bloco-central">
-            <img src={logorosa} alt="Logo Sublime" className="logo-banner-gigante" /> {/* Alterado para logorosa */}
-            <p className="slogan-texto">✨Presentear é um ato de amor💐</p>
-            <button className="botao-explorar" onClick={() => setAbaAtiva('explorar')}>Explorar Coleção</button>
-          </div>
-        )}
+  <div className="bloco-central">
+    <img 
+      src={namorados1} 
+      alt="Logo" 
+      className="logo-banner-gigante" 
+      style={{ 
+        width: 'auto', 
+        maxHeight: '350px', 
+        objectFit: 'contain',
+        borderRadius: '15px', /* Arredonda as bordas */
+        border: '3px solid var(--rosa-chiclete)' /* Adiciona a borda rosa escuro */
+      }} 
+    />
+    <button className="botao-explorar" onClick={() => setAbaAtiva('explorar')}>Explorar Coleção</button>
+  </div>
+)}
 
         {abaAtiva === 'explorar' && (
           <div className="container-explorar" style={{ width: '100%' }}>
             
-            {/* GRID DE CATEGORIAS - SÓ APARECE SE NADA FOR CLICADO */}
+            {/* GRID DE CATEGORIAS */}
             {!secaoInterna && (
               <div className="grid-secoes">
                 <div className="secao-item" onClick={() => setSecaoInterna('buques')}>
@@ -91,6 +102,10 @@ function App() {
                   <div className="circulo-icone">🧉</div>
                   <span>Chimas</span>
                 </div>
+                <div className="secao-item" onClick={() => setSecaoInterna('dia-dos-namorados')}>
+                  <div className="circulo-icone">👩‍❤️‍👨</div>
+                  <span>Dia dos Namorados</span>
+                </div>
               </div>
             )}
 
@@ -98,6 +113,26 @@ function App() {
             {secaoInterna === 'buques' && (
               <div className="area-produtos">
                 <h2 className="titulo-sobre">Nossos Buquês</h2>
+                <div className="vitrine-vendas">
+                  {[
+                    { img: namorados, nome: "❤️", preco: "Consulte aqui" }
+                  ].map((p, index) => (
+                    <div className="card-venda" key={index}>
+                      <div className="foto-prod"><img src={p.img} alt={p.nome} className="imagem-real" /></div>
+                      <h3>{p.nome}</h3>
+                      <p>R$ {p.preco}</p>
+                      <button onClick={() => comprarWpp(p.nome)}>Pedir no WhatsApp</button>
+                    </div>
+                  ))}
+                </div>
+                <button className="botao-voltar-secao" onClick={() => setSecaoInterna(null)}>←</button>
+              </div>
+            )}
+
+            {/* DIA DOS NAMORADOS */}
+            {secaoInterna === 'dia-dos-namorados' && (
+              <div className="area-produtos">
+                <h2 className="titulo-sobre">Dia dos Namorados</h2>
                 <div className="vitrine-vendas">
                   {[
                     { img: buque14, nome: "Buquê coreano 5 rosas", preco: "160,00" },
@@ -197,15 +232,14 @@ function App() {
                 <button className="botao-voltar-secao" onClick={() => setSecaoInterna(null)}>←</button>
               </div>
             )}
-          </div>
-        )}
-{/* VITRINE DE FLORICULTURA */}
+
+            {/* VITRINE DE FLORICULTURA */}
             {secaoInterna === 'floricultura' && (
               <div className="area-produtos">
                 <h2 className="titulo-sobre">Floricultura</h2>
                 <div className="vitrine-vendas">
                   {[
-                 
+                    // Mantido o array vazio original
                   ].map((p, index) => (
                     <div className="card-venda" key={index}>
                       <div className="foto-prod"><img src={p.img} alt={p.nome} className="imagem-real" /></div>
@@ -219,10 +253,13 @@ function App() {
               </div>
             )}
 
+          </div>
+        )}
+
         {abaAtiva === 'sobre' && (
           <div className="bloco-texto-sobre">
             <h2 className="titulo-sobre">Nossa Essência</h2>
-            <p className="assinatura">Somos especialistas em presentes, por que entendemos que presentear vai muito além de comprar algo e entregar, se trata de demonstrar que aquela pessoa é especial e merece dedicação na escolha e produção de cada detalhe, estamos sempre em busca de inovação, mas sem perder a nossa essência que é a proximidade com nossos clientes, que se tornam nossos amigos. Nascemos de um acaso, nosso trabalho é um amor construído, entregamos sorrisos e compartilhamos momentos, e entre laços e flores, entregamos em cada presente um pouquinho de nós, vamos construindo juntos essa história história “Sublime”, que está só começando… Com amor, Equipe Sublime ✨</p>
+            <p className="assinatura">Somos especialistas em presentes, porque entendemos que presentear vai muito além de comprar algo e entregar, se trata de demonstrar que aquela pessoa é especial e merece dedicação na escolha e produção de cada detalhe, estamos sempre em busca de inovação, mas sem perder a nossa essence que é a proximidade com nossos clientes, que se tornam nossos amigos. Nascemos de um acaso, nosso trabalho é um amor construído, entregamos sorrisos e compartilhamos momentos, e entre laços e flores, entregamos em cada presente um pouquinho de nós, vamos construindo juntos essa história “Sublime”, que está só começando… Com amor, Equipe Sublime ✨</p>
           </div>
         )}
 
