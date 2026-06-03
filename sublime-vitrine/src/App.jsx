@@ -5,20 +5,6 @@ import namorados from './assets/namorados.jpeg';
 import namorados1 from './assets/namorados1.jpeg';
 
 // --- IMPORTAÇÕES DAS IMAGENS ---
-import buque14 from './assets/buque14.jpeg';
-import buque12 from './assets/buque12.jpeg';
-import buque11 from './assets/buque11.jpeg';
-import buque13 from './assets/buque13.jpeg';
-import buque10 from './assets/buque10.jpeg';
-import buque8 from './assets/buque8.jpeg';
-import buque9 from './assets/buque9.jpeg';
-import buque7 from './assets/buque7.jpeg';
-import buque5 from './assets/buque5.jpeg';
-import buque6 from './assets/buque6.jpeg';
-import buque4 from './assets/buque4.jpeg';
-import buque3 from './assets/buque3.jpeg';
-import buque18 from './assets/buque18.jpeg';
-
 import cesta1 from './assets/cesta1.jpeg';
 import cesta2 from './assets/cesta2.jpeg';
 import cesta3 from './assets/cesta3.jpeg';
@@ -37,6 +23,21 @@ import caneca1 from './assets/caneca1.jpeg';
 import caneca2 from './assets/caneca2.jpeg';
 import caneca3 from './assets/caneca3.jpeg';
 import caneca4 from './assets/caneca4.jpeg';
+
+import namorados0 from './assets/namorados0.jpeg';
+import namorados2 from './assets/namorados2.jpeg';
+import namorados3 from './assets/namorados3.jpeg';
+import namorados4 from './assets/namorados4.jpeg';
+import namorados5 from './assets/namorados5.jpeg';
+import namorados6 from './assets/namorados6.jpeg';
+import namorados7 from './assets/namorados7.jpeg';
+import namorados8 from './assets/namorados8.jpeg';
+import namorados9 from './assets/namorados9.jpeg';
+import namorados10 from './assets/namorados10.jpeg';
+import namorados11 from './assets/namorados11.jpeg';
+import namorados12 from './assets/namorados12.jpeg';
+import namorados13 from './assets/namorados13.jpeg';
+import namorados15 from './assets/namorados15.jpeg';
 
 function App() {
   const [abaAtiva, setAbaAtiva] = useState('inicio');
@@ -136,19 +137,21 @@ function App() {
                 <h2 className="titulo-sobre">Dia dos Namorados</h2>
                 <div className="vitrine-vendas">
                   {[
-                    { img: buque14, nome: "Buquê coreano 5 rosas", preco: "160,00" },
-                    { img: buque12, nome: "Solitário girassol Van Gogh", preco: "50,00" },
-                    { img: buque11, nome: "Cone Rosa", preco: "30,00" },
-                    { img: buque13, nome: "Buquê 3 rosas", preco: "90,00" },
-                    { img: buque10, nome: "Buquê rosas mistas", preco: "190,00" },
-                    { img: buque8, nome: "Buquê 15 rosas vermelhas", preco: "375,00" },
-                    { img: buque9, nome: "Box rosas e astromélias", preco: "199,00" },
-                    { img: buque7, nome: "Cartão Coração", preco: "59,90" },
-                    { img: buque5, nome: "Buquê 10 rosas", preco: "270,00" },
-                    { img: buque6, nome: "Buquê 7 rosas mistas G", preco: "230,00" },
-                    { img: buque4, nome: "Buquê 3 rosas Pink", preco: "90,00" },
-                    { img: buque3, nome: "Solitário girassol e rosa azul", preco: "80,00" },
-                    { img: buque18, nome: "Buquê Ferrero Rocher 12 rosas", preco: "350,00" }
+                    { img: namorados0, nome: "Buquê Love", preco: "160,00" },
+                    { img: namorados2, nome: "Box 20 rosas", preco: "440,00" },
+                    { img: namorados3, nome: "Buquê 100 rosas naturais importadas", preco: "2.000,00" },
+                    { img: namorados4, nome: "Buquê Ferrero Rocher", preco: "350,00" },
+                    { img: namorados5, nome: "Buquê 2 rosas e astromelias", preco: "70,00" },
+                    { img: namorados6, nome: "Buquê tradicional 12 rosas", preco: "270,00" },
+                    { img: namorados7, nome: "Botão de Rosa importada (não acompanha chocolate)", preco: "20,00" },
+                    { img: namorados8, nome: "Cone rosa importada", preco: "30,00" },
+                    { img: namorados9, nome: "Baldinho de Cerveja 1", preco: "110,00" },
+                    { img: namorados10, nome: "Baldinho de Cerveja 2", preco: "110,00" },
+                    { img: namorados11, nome: "Baldinho de Cerveja 3", preco: "110,00" },
+                    { img: namorados12, nome: "Baldinho de Cerveja 4", preco: "110,00" },
+                    { img: namorados13, nome: "Buquê 6 girassóis ", preco: "180,00" },
+                    { img: namorados15, nome: "Buquê 3 rosas", preco: "90,00"}
+                    
                   ].map((p, index) => (
                     <div className="card-venda" key={index}>
                       <div className="foto-prod"><img src={p.img} alt={p.nome} className="imagem-real" /></div>
