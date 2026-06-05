@@ -38,6 +38,18 @@ import namorados11 from './assets/namorados11.jpeg';
 import namorados12 from './assets/namorados12.jpeg';
 import namorados13 from './assets/namorados13.jpeg';
 import namorados15 from './assets/namorados15.jpeg';
+import namorados16 from './assets/namorados16.jpeg';
+import namorados17 from './assets/namorados17.jpeg';
+import namorados18 from './assets/namorados18.jpeg';
+import namorados19 from './assets/namorados19.jpeg';
+import namorados20 from './assets/namorados20.jpeg';
+import namorados21 from './assets/namorados21.jpeg';
+import namorados22 from './assets/namorados22.jpeg';
+import namorados23 from './assets/namorados23.jpeg';
+import namorados24 from './assets/namorados24.jpeg';
+import namorados25 from './assets/namorados25.jpeg';
+import namorados26 from './assets/namorados26.jpeg';
+import namorados27 from './assets/namorados27.jpeg';
 
 function App() {
   const [abaAtiva, setAbaAtiva] = useState('inicio');
@@ -150,7 +162,19 @@ function App() {
                     { img: namorados11, nome: "Baldinho de Cerveja 3", preco: "110,00" },
                     { img: namorados12, nome: "Baldinho de Cerveja 4", preco: "110,00" },
                     { img: namorados13, nome: "Buquê 6 girassóis ", preco: "180,00" },
-                    { img: namorados15, nome: "Buquê 3 rosas", preco: "90,00"}
+                    { img: namorados15, nome: "Buquê 3 rosas", preco: "90,00"},
+                    { img: namorados16, nome: "Caixa com gaveta chocolates", preco: "389,00" },
+                    { img: namorados17, nome: "Caixa trufas coraçãos", preco: "75,00" },
+                    { img: namorados18, nome: "Lata Cacau Show trufas", preco: "45,00" },
+                    { img: namorados19, nome: "Box Pringles", preco: "100,00" },
+                    { img: namorados20, nome: "Caixa porta joias bombons finos Cacau Show", preco: "85,00" },
+                    { img: namorados21, nome: "Cesta Urso e Licor", preco: "370,00" },
+                    { img: namorados22, nome: "Especialmene para você Ferrero Rocher", preco: "150,00" },
+                    { img: namorados23, nome: "Box urso Cacau Show com balão", preco: "389,00" },
+                    { img: namorados24, nome: "Cesta Especialmete pra você Cerveja Artesanal (aberta)", preco: "150,00" },
+                    { img: namorados25, nome: "Cesta Barca Cacau Show", preco: "195,00" },
+                    { img: namorados26, nome: "Box astromelias e rosas importadas", preço: "200,00"},
+                    { img: namorados27, nome: "Cesta cacau show com Licor Casa Spanner", preco: "370,00" }
                     
                   ].map((p, index) => (
                     <div className="card-venda" key={index}>
